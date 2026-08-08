@@ -1,2 +1,4 @@
 gradio
 langchain-groq
+duckduckgo_search
+
