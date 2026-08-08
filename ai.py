@@ -91,9 +91,19 @@ header_html = """
 </div>
 """
 
-with gr.Blocks(title="adhy's AI") as demo:
+custom_css = """
+.gradio-container {
+    max-width: 100% !important;
+    padding: 0 !important;
+}
+#chatbot {
+    height: 75vh !important;
+}
+"""
+
+with gr.Blocks(title="adhy's AI", css=custom_css) as demo:
     gr.HTML(header_html)
-    gr.ChatInterface(fn=chat_function)
+    gr.ChatInterface(fn=chat_function, elem_id="chatbot")
 
 if __name__ == "__main__":
     import os
